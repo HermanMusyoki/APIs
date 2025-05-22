@@ -7,7 +7,8 @@ const {
   CONSUMER_SECRET,
   SHORT_CODE,
   CONFIRMATION_URL,
-  VALIDATION_URL
+  VALIDATION_URL,
+  Basic_Auth
 } = process.env;
 
 async function getAccessToken() {
@@ -17,7 +18,7 @@ async function getAccessToken() {
   try {
     const response = await axios.get(url, {
       headers: {
-        Authorization: `Basic ZmpDdDdCVVlocXBMbHFKRVhoM21Qc2xQSEZxM0psUmNyOFVqeWsxRDZxeFBsdVZwOkdrSU5nM28yZ3d2ZGhBWkdHdW1mUGIxc1Q2ekZsS1FGdFBZQVN3cnZHRWJ6QkxmS05hU2NvdkNpb0ExRWlBNWI=`
+        Authorization: Basic_Auth
       }
     });
     return response.data.access_token;
